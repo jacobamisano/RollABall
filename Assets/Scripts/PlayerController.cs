@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 0;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
+    public GameObject PickupParent;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviour
             SetCountText();
         }
 
-        if (count >= 6)
+        if (count >= PickupParent.transform.childCount)
         {
 
             winTextObject.SetActive(true);
