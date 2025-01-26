@@ -7,8 +7,9 @@ public class Pacer : MonoBehaviour
     public float zMax = 7.5f;
     public float zMin = -7.5f; //starting position
     
-    private int direction = 1; //positive to start
 
+
+    private int direction = 1; //positive to start
     void Update() {
         float zNew = transform.position.z + direction* speed *Time.deltaTime;
         float xStart = transform.position.x;

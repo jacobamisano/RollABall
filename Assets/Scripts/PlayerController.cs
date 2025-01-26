@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
             SetCountText();
         }
 
-        if (count >= PickupParent.transform.childCount)
+        if (count >= PickupParent.transform.childCount + 1)
         {
 
             winTextObject.SetActive(true);
