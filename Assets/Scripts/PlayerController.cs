@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
     public GameObject PickupParent;
+    public GameObject MusicPlayer;
+
+    //LIV'S
+    public AudioClip DingClip;
+    public AudioClip WinClip;
+    public AudioClip LoseClip;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +28,10 @@ public class PlayerController : MonoBehaviour
         count = 0;
         SetCountText();
         winTextObject.SetActive(false);
+
     }
+
+
     void OnMove(InputValue movementValue)
     {
 
@@ -49,14 +58,18 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             count = count + 1;
             SetCountText();
+            //LIV'S pickup clip player
+            AudioSource.PlayClipAtPoint(DingClip, new Vector3(0, 1, 0));
         }
 
         if (count >= PickupParent.transform.childCount + 1)
         {
 
             winTextObject.SetActive(true);
-
             Destroy(GameObject.FindGameObjectWithTag("Enemy"));
+            //LIV'S win clip player
+            Destroy(GameObject.FindGameObjectWithTag("Music"));
+            AudioSource.PlayClipAtPoint(WinClip, new Vector3(0, 1, 0));
         }
     }
 
@@ -64,11 +77,14 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            // Destroy the current object
-            Destroy(gameObject);
             // Update the winText to display "You Lose!"
             winTextObject.gameObject.SetActive(true);
-            winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
+            winTextObject.GetComponent<TextMeshProUGUI>().text = "L BOZO";
+            // Destroy the current object
+            gameObject.SetActive(false);
+            Destroy(GameObject.FindGameObjectWithTag("Music"));
+            AudioSource.PlayClipAtPoint(LoseClip, new Vector3(0, 1, 0));
+
         }
     }
 }
