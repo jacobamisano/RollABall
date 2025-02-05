@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerKiller : MonoBehaviour
 {
     public GameObject EndGameMenu;
+    public GameObject ball;
     // Update is called once per frame
     void Update()
     {
@@ -16,7 +17,7 @@ public class PlayerKiller : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             EndGameMenu.SetActive(true);
-            GameObject.Find("Enemy Ball").SetActive(false);
+            ball.SetActive(false);
         }
     }
 }
