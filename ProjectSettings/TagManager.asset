@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Music
   - bag1
+  - Hand
   layers:
   - Default
   - TransparentFX

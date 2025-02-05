@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.rollaballintro.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\jamisano2\\git\\RollABall\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\jpami\\git\\RollABall\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "RollABall-Intro [Testing]"
